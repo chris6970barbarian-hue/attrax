@@ -1,0 +1,31 @@
+from launch import LaunchDescription
+from launch.actions import DeclareLaunchArgument
+from launch.substitutions import LaunchConfiguration
+from launch_ros.actions import Node
+
+
+def generate_launch_description():
+    return LaunchDescription([
+        DeclareLaunchArgument('config_file', default_value='',
+                              description='Path to robot config YAML. Empty = use default Follower.yaml'),
+        DeclareLaunchArgument('status_publish_rate', default_value='20.0',
+                              description='Status publish rate in Hz'),
+        DeclareLaunchArgument('max_velocity', default_value='0.1',
+                              description='Max joint velocity in rad/s'),
+        DeclareLaunchArgument('max_joint_step', default_value='0.0',
+                              description='Reject commands causing any single joint to jump more than this many radians. 0 disables this guard'),
+
+        Node(
+            package='panthera_arm_control',
+            executable='arm_control_node',
+            name='arm_control_node',
+            output='screen',
+            parameters=[{
+                'config_file': LaunchConfiguration('config_file'),
+                'status_publish_rate': LaunchConfiguration('status_publish_rate'),
+                'max_velocity': LaunchConfiguration('max_velocity'),
+                'max_joint_step': LaunchConfiguration('max_joint_step'),
+                'max_torque': [21.0, 36.0, 36.0, 21.0, 10.0, 10.0],
+            }],
+        ),
+    ])

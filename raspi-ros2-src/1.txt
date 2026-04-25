@@ -1,0 +1,49 @@
+cg@cgdesktop:~/ws$ ros2 launch panthera_arm_control arm_control.launch.py
+[INFO] [launch]: All log files can be found below /home/cg/.ros/log/2026-04-24-18-14-54-727306-cgdesktop-104748
+[INFO] [launch]: Default logging verbosity is set to INFO
+[INFO] [arm_control_node-1]: process started with pid [104751]
+[arm_control_node-1] [INFO] [1777025694.889286873] [arm_control_node]: Initializing Panthera SDK with config: /home/cg/ws/install/hightorque_robot/share/hightorque_robot/robot_param/Follower.yaml
+[arm_control_node-1] robot_config: Panthera-HT
+[arm_control_node-1] Got params SDK_version: v4.6.0
+[arm_control_node-1] The robot name is Panthera-HT
+[arm_control_node-1] The robot has 1 CANboards
+[arm_control_node-1] The Serial type is /dev/ttyACM
+[arm_control_node-1] Serial Port List: 
+[arm_control_node-1] Warning: Could not read VID/PID for configured serial device: /dev/serial/by-id/usb-mjbots_fdcanusb_1CB829E7-if00. Continuing because the explicit path exists.
+[arm_control_node-1] Serial Port0 = /dev/serial/by-id/usb-mjbots_fdcanusb_1CB829E7-if00 (mjbots_fdcanusb)
+[arm_control_node-1] error_run_state = 0
+[arm_control_node-1] CANboard(1) CANport(1) Connection disconnected!!!
+[arm_control_node-1] Detecting motor connection
+[arm_control_node-1] .
+[arm_control_node-1] .
+[arm_control_node-1] CANboard(1) CANport(1) id(1) Motor connection disconnected!!!
+[arm_control_node-1] CANboard(1) CANport(1) id(2) Motor connection disconnected!!!
+[arm_control_node-1] CANboard(1) CANport(1) id(3) Motor connection disconnected!!!
+[arm_control_node-1] CANboard(1) CANport(1) id(4) Motor connection disconnected!!!
+[arm_control_node-1] CANboard(1) CANport(1) id(5) Motor connection disconnected!!!
+[arm_control_node-1] CANboard(1) CANport(1) id(6) Motor connection disconnected!!!
+[arm_control_node-1] CANboard(1) CANport(1) id(7) Motor connection disconnected!!!
+[arm_control_node-1] The robot has 7 motors
+[arm_control_node-1] robot init
+[arm_control_node-1] 配置文件加载成功: /home/cg/ws/install/hightorque_robot/share/hightorque_robot/robot_param/Follower.yaml
+[arm_control_node-1] 关节限位加载成功: lower=[-2.4, -0.1, -0.1, -1.6, -1.7, -2.5, -1], upper=[2.4, 3.2, 4, 1.6, 1.7, 2.5, 1]
+[arm_control_node-1] 初始化机械臂...
+[arm_control_node-1] 发现 6 个电机
+[arm_control_node-1] Motor 0: ID=1, Type=5, Name=joint1
+[arm_control_node-1] Motor 1: ID=2, Type=8, Name=joint2
+[arm_control_node-1] Motor 2: ID=3, Type=8, Name=joint3
+[arm_control_node-1] Motor 3: ID=4, Type=5, Name=joint4
+[arm_control_node-1] Motor 4: ID=5, Type=6, Name=joint5
+[arm_control_node-1] Motor 5: ID=6, Type=6, Name=joint6
+[arm_control_node-1] Motor 6: ID=7, Type=1, Name=joint7
+[arm_control_node-1] [INFO] [1777025720.119449978] [arm_control_node]: Robot initialized, motor count: 6
+[arm_control_node-1] [INFO] [1777025720.119701957] [arm_control_node]: Loading URDF for KDL: /home/cg/ws/install/panthera_ht_description_with_finger/share/panthera_ht_description_with_finger/urdf/Panthera-HT_description_with_finger.urdf
+[arm_control_node-1] [INFO] [1777025720.119736269] [arm_control_node]: Kinematic chain: base_link -> link6
+[arm_control_node-1] [WARN] [1777025720.127374345] [kdl_parser]: The root link base_link has an inertia specified in the URDF, but KDL does not support a root link with an inertia.  As a workaround, you can add an extra dummy link to your URDF.
+[arm_control_node-1] [INFO] [1777025720.128472622] [arm_control_node]: KDL chain has 6 joints
+[arm_control_node-1] [INFO] [1777025720.128557393] [arm_control_node]: KDL IK/FK solvers initialized successfully
+[arm_control_node-1] [INFO] [1777025720.148346033] [arm_control_node]: === Panthera Arm Control Node Started ===
+[arm_control_node-1] [INFO] [1777025720.148387955] [arm_control_node]: Publishers: joint_states_single, arm_status, end_pose_euler
+[arm_control_node-1] [INFO] [1777025720.148399695] [arm_control_node]: Subscribers: arm_joint_cmd, gripper_cmd, enable_flag, pos_cmd
+[arm_control_node-1] [INFO] [1777025720.148409805] [arm_control_node]: Services: move_to_joint, move_to_pose, gripper_control, enable_srv, go_zero_srv, stop_srv, reset_srv, gripper_srv
+
